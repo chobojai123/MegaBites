@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyparser = require('body-parser');
-const db = require('../database/index.js');
 const Promise = require('bluebird');
 const request = require('request');
 const Comments = require('../database/comments.js');
@@ -17,18 +16,17 @@ app.post('/recipe', function (req, res) {
 })
 
 
-app.get('/recipe', function (req, res) {
+app.get('/recipe', (req, res) => {
   return Comments.fetch()
-  .then(function(recipes) {
+  .then((recipes) => {
     res.status(200);
     res.send(recipes);
   })
-  .catch(function(err) {
+  .catch((err) => {
     res.status(400)
     res.end('Failed to get comments', err);
   })
 })
-
 
 let port = 5000;
 
