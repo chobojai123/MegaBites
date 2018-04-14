@@ -14,12 +14,12 @@ const sampleData = () => {
       {
         id: i+1,
         recipeName: recipe[i],
-        comments: {
+        comments: [{
           commentsText: faker.lorem.sentence(),
           fullName: faker.name.findName(),
           created_At: faker.date.past(),
           image: faker.image.avatar(),
-        },
+        }],
       });
   }
   return sampleArray;

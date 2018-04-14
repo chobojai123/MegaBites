@@ -22,7 +22,9 @@ class App extends React.Component {
   getComment() {
     axios.get('/recipe')
     .then(recipes => this.setState({ comment: recipes.data }))
+    .then(recipe => console.log(this.state.comment))
     .catch(err => console.log('Error getting comments', err));
+    
   }
 
 
