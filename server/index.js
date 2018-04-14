@@ -8,29 +8,27 @@ let app = express();
 app.use(bodyparser.json());
 app.use(express.static(__dirname + '/../client/dist'));
 
-
-
-app.post('/recipe', function (req, res) {
+app.post('/recipe', (req, res) => {
 
   res.send('hi');
 })
 
 
 app.get('/recipe', (req, res) => {
-  return Comments.fetch()
-  .then((recipes) => {
-    res.status(200);
-    res.send(recipes);
-  })
-  .catch((err) => {
-    res.status(400)
-    res.end('Failed to get comments', err);
-  })
-})
+  return Comments.getRecipe()
+    .then((recipes) => {
+      res.status(200);
+      res.send(recipes);
+    })
+    .catch((err) => {
+      res.status(400)
+      res.end('Failed to get comments', err);
+    });
+});
 
 let port = 5000;
 
-app.listen(port, function () {
+app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
 
