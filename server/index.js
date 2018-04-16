@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/../client/dist'));
 
 app.post('/recipe', (req, res) => {
 
-  res.send('hi');
+  res.send('bye');
 })
 
 
@@ -21,7 +21,7 @@ app.get('/recipe', (req, res) => {
       res.send(recipes);
     })
     .catch((err) => {
-      res.status(400)
+      res.status(400);
       res.end('Failed to get comments', err);
     });
 });
