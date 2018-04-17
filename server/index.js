@@ -21,7 +21,7 @@ app.get('/recipe/:id', (req, res) => {
       res.send(recipes);
     })
     .catch((err) => {
-      res.status(400)
+      res.status(404)
       res.end('Failed to get comments', err);
     });
 });
