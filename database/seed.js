@@ -19,6 +19,24 @@ const sampleData = () => {
           fullName: faker.name.findName(),
           created_At: faker.date.past(),
           image: faker.image.avatar(),
+        },
+        {
+          commentsText: faker.lorem.sentence(),
+          fullName: faker.name.findName(),
+          created_At: faker.date.past(),
+          image: faker.image.avatar(),
+        },
+        {
+          commentsText: faker.lorem.sentence(),
+          fullName: faker.name.findName(),
+          created_At: faker.date.past(),
+          image: faker.image.avatar(),
+        },
+        {
+          commentsText: faker.lorem.sentence(),
+          fullName: faker.name.findName(),
+          created_At: faker.date.past(),
+          image: faker.image.avatar(),
         }],
       });
   }

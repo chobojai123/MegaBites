@@ -1,12 +1,13 @@
 import React from 'react';
 
 const CommentListItem = (props) => (
-  <div>
-    {/* <span>{props.comments.id}</span> */}
-    {/* <span>{props.comments.comments[0].fullName}</span>
-    <span>{props.comments.comments[0].commentsText}</span> */}
-    <img src={props.comments.comments[0].image}></img>
-    {/* <span>{props.comments.comments[0].image}</span> */}
+  
+  <div className="review">
+    <div className="info">
+      <img src={props.comment.image} alt='user'></img>
+      <span>{props.comment.fullName}</span>
+    </div>
+    <p>{props.comment.commentsText}</p>
   </div>
 )
 

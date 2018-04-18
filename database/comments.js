@@ -19,7 +19,7 @@ const Comments = mongoose.model('recipe', commentSection);
 
 const getComment = (recipeID) => {
   return new Promise((resolve, reject) => {
-    Comments.findOne({id: recipeID})
+    Comments.find({id: recipeID})
       .then((results) => { resolve(results) })
       .catch((err) => { reject(err) })
   });

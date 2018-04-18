@@ -4,38 +4,29 @@ class AddCommentForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      text: '',
+      comment: '',
     };
-    this.updateName = this.updateName.bind(this);
     this.updateText = this.updateText.bind(this);
     this.submit = this.submit.bind(this);
   }
 
-  updateName(e) {
-    this.setState({
-      name: e.target.value,
-    });
-  }
-
   updateText(e) {
     this.setState({
-      text: e.target.value,
+      comment: e.target.value,
     });
   }
 
   submit(e) {
     e.preventDefault();
-    const { name, quantity } = this.state;
-    this.props.addComment({ name, quantity });
-    this.setState({ name: '', quantity: '' });
+    const { comment } = this.state;
+    this.props.addComment({ comment });
+    this.setState({ comment: '' });
   }
 
   render() {
     return (
       <form onSubmit={this.submit}>
-        <input placeholder="Add Name" onChange={this.updateName} value={this.state.name} required />
-        <input placeholder="Add Comment" onChange={this.updateText} value={this.state.text} required />
+        <input placeholder="Add a comment..." onChange={this.updateText} value={this.state.comment} required />
         <button type="submit">Post</button>
       </form >
     );

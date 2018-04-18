@@ -8,30 +8,28 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      comment: [],
+      comments: [],
     };
     this.getComment = this.getComment.bind(this);
     this.addComment = this.addComment.bind(this);
   }
 
   componentDidMount() {
-    this.getComment();
+    this.getComment(2);
   }
 
 
-  getComment() {
-    axios.get('/recipe')
-    .then(recipes => this.setState({ comment: recipes.data }))
-    .then(recipe => console.log(this.state.comment))
-    .catch(err => console.log('Error getting comments', err));
-    
+  getComment(id) {
+    axios.get(`/recipe/${id}`)
+    .then(comment => this.setState({ comments: comment }))
+    .catch(err => console.log(err))
   }
 
 
   addComment(comment) {
-    axios.post('/recipe', comment)
-      .then(comment => this.setState({ comment: comment }))
-      .catch(err => console.log('Error adding comment', err) )
+    axios.post('/recipe/:id', comment)
+      .then(comment => console.log('hi'))
+      .catch(err => console.log(err) )
   }
 
 
@@ -39,8 +37,8 @@ class App extends React.Component {
     return (
       <div className="app">
         <h1>Tips from Head Chefs</h1> 
-        <CommentList comment={this.state.comment}/>
-        <AddCommentForm addComment={this.addComment}/>
+        <CommentList comments={this.state.comments}/>
+        {/* <AddCommentForm addComment={this.addComment}/> */}
       </div>
     );
   }
