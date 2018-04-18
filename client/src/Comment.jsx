@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CommentListItem = (props) => (
+const Comment = (props) => (
   
   <div className="review">
     <div className="info">
@@ -12,4 +12,4 @@ const CommentListItem = (props) => (
 )
 
 
-export default CommentListItem;
+export default Comment;

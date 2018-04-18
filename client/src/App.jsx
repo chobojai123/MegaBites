@@ -2,8 +2,6 @@ import React from 'react';
 import AddCommentForm from './AddCommentForm.jsx';
 import CommentList from './CommentList.jsx';
 import axios from 'axios';
-import About from './About.jsx';
-
 
 class App extends React.Component {
   constructor(props) {
