@@ -2,6 +2,7 @@ import React from 'react';
 import AddCommentForm from './AddCommentForm.jsx';
 import CommentList from './CommentList.jsx';
 import axios from 'axios';
+import About from './About.jsx';
 
 
 class App extends React.Component {
@@ -14,6 +15,7 @@ class App extends React.Component {
     this.addComment = this.addComment.bind(this);
   }
 
+  // testing with a recipe ID
   componentDidMount() {
     this.getComment(2);
   }
@@ -21,14 +23,14 @@ class App extends React.Component {
 
   getComment(id) {
     axios.get(`/recipe/${id}`)
-    .then(comment => this.setState({ comments: comment }))
+    .then(comment => this.setState({comments: comment.data[0].comments}))
     .catch(err => console.log(err))
   }
 
-
+// add comment function is still in progress *stretch goal
   addComment(comment) {
     axios.post('/recipe/:id', comment)
-      .then(comment => console.log('hi'))
+      .then(comment => this.getComment)
       .catch(err => console.log(err) )
   }
 
@@ -36,9 +38,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <h1>Tips from Head Chefs</h1> 
-        <CommentList comments={this.state.comments}/>
-        {/* <AddCommentForm addComment={this.addComment}/> */}
+        <section className="section">
+          <div className="tips">
+            <h3>Tips from Head Chefs</h3> 
+            <div><b>{this.state.comments.length} Comments</b></div>
+            <AddCommentForm addComment={this.addComment}/>
+            <CommentList comments={this.state.comments}/>
+          </div>
+        </section>
       </div>
     );
   }
