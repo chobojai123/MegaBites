@@ -1,7 +1,21 @@
 const mongoose = require('mongoose');
-
 const mongoUri = 'mongodb://localhost/davidcheng1290';
-
 const db = mongoose.connect(mongoUri);
+mongoose.Promise = global.Promise;
 
-module.exports = db;
+const commentSection = new mongoose.Schema({
+  id: { type: Number, unique: true, required: true },
+  recipeName: String,
+  comments: [
+    {
+      commentsText: String,
+      fullName: String,
+      created_At: String,
+      image: String,
+    }
+  ],
+});
+
+const Comments = mongoose.model('recipe', commentSection);
+
+module.exports.Comments = Comments;

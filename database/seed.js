@@ -1,5 +1,4 @@
 const db = require('./index.js');
-const Comments = require('./comments.js');
 const faker = require('faker');
 const mongoose = require('mongoose');
 
@@ -18,25 +17,25 @@ const sampleData = () => {
           commentsText: faker.lorem.sentence(),
           fullName: faker.name.findName(),
           created_At: faker.date.past(),
-          userImage: faker.userImage.avatar(),
+          userImage: faker.image.avatar(),
         },
         {
           commentsText: faker.lorem.sentence(),
           fullName: faker.name.findName(),
           created_At: faker.date.past(),
-          userImage: faker.userImage.avatar(),
+          userImage: faker.image.avatar(),
         },
         {
           commentsText: faker.lorem.sentence(),
           fullName: faker.name.findName(),
           created_At: faker.date.past(),
-          userImage: faker.userImage.avatar(),
+          userImage: faker.image.avatar(),
         },
         {
           commentsText: faker.lorem.sentence(),
           fullName: faker.name.findName(),
           created_At: faker.date.past(),
-          userImage: faker.userImage.avatar(),
+          userImage: faker.image.avatar(),
         }],
       });
   }
@@ -47,7 +46,7 @@ const sampleData = () => {
 const sampleArrays = sampleData();
 // function to insert data into MongoDB
 const insertSampleData = () => {
-  Comments.Comments.create(sampleArrays);
+  db.Comments.create(sampleArrays);
 };
 
 // run the insertion function
