@@ -9,17 +9,17 @@ class App extends React.Component {
     this.state = {
       comments: [],
     };
-    this.getComment = this.getComment.bind(this);
+    this.getComments = this.getComments.bind(this);
     this.addComment = this.addComment.bind(this);
   }
 
   // testing with a recipe ID
   componentDidMount() {
-    this.getComment(2);
+    this.getComments(2);
   }
 
 
-  getComment(id) {
+  getComments(id) {
     axios.get(`/recipe/${id}`)
     .then(comment => this.setState({comments: comment.data[0].comments}))
     .catch(err => console.log(err))
@@ -28,7 +28,7 @@ class App extends React.Component {
 // add comment function is still in progress *stretch goal
   addComment(comment) {
     axios.post('/recipe/:id', comment)
-      .then(comment => this.getComment)
+      .then(comment => this.getComments)
       .catch(err => console.log(err) )
   }
 

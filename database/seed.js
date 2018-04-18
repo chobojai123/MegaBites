@@ -18,25 +18,25 @@ const sampleData = () => {
           commentsText: faker.lorem.sentence(),
           fullName: faker.name.findName(),
           created_At: faker.date.past(),
-          image: faker.image.avatar(),
+          userImage: faker.userImage.avatar(),
         },
         {
           commentsText: faker.lorem.sentence(),
           fullName: faker.name.findName(),
           created_At: faker.date.past(),
-          image: faker.image.avatar(),
+          userImage: faker.userImage.avatar(),
         },
         {
           commentsText: faker.lorem.sentence(),
           fullName: faker.name.findName(),
           created_At: faker.date.past(),
-          image: faker.image.avatar(),
+          userImage: faker.userImage.avatar(),
         },
         {
           commentsText: faker.lorem.sentence(),
           fullName: faker.name.findName(),
           created_At: faker.date.past(),
-          image: faker.image.avatar(),
+          userImage: faker.userImage.avatar(),
         }],
       });
   }

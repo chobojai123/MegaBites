@@ -9,7 +9,7 @@ const commentSection = new mongoose.Schema({
     { commentsText: String,
       fullName: String,
       created_At: String,
-      image: String,
+      userImage: String,
     }
   ],
 });
@@ -17,7 +17,7 @@ const commentSection = new mongoose.Schema({
 const Comments = mongoose.model('recipe', commentSection);
 
 
-const getComment = (recipeID) => {
+const getComments = (recipeID) => s{
   return new Promise((resolve, reject) => {
     Comments.find({id: recipeID})
       .then((results) => { resolve(results) })
@@ -27,4 +27,4 @@ const getComment = (recipeID) => {
 
 
 module.exports.Comments = Comments;
-module.exports.getComment = getComment;
+module.exports.getComments = getComments;

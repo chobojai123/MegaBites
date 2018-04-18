@@ -1,7 +1,5 @@
 const express = require('express');
 const bodyparser = require('body-parser');
-const Promise = require('bluebird');
-const request = require('request');
 const Comments = require('../database/comments.js');
 
 let app = express();
@@ -15,7 +13,7 @@ app.post('/recipe', (req, res) => {
 
 
 app.get('/recipe/:id', (req, res) => {
-  return Comments.getComment(req.params.id)
+  return Comments.getComments(req.params.id)
     .then((recipes) => {
       res.status(200);
       res.send(recipes);
