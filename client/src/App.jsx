@@ -1,7 +1,7 @@
 import React from 'react';
+import axios from 'axios';
 import AddCommentForm from './AddCommentForm.jsx';
 import CommentList from './CommentList.jsx';
-import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class App extends React.Component {
       comments: [],
     };
     this.getComments = this.getComments.bind(this);
-    this.addComment = this.addComment.bind(this);
+    this.postComment = this.postComment.bind(this);
   }
 
   // testing with a recipe ID
@@ -26,7 +26,7 @@ class App extends React.Component {
   }
 
 // add comment function is still in progress *stretch goal
-  addComment(comment) {
+  postComment(comment) {
     axios.post('/recipe/:id', comment)
       .then(comment => this.getComments)
       .catch(err => console.log(err) )
@@ -39,8 +39,8 @@ class App extends React.Component {
         <section className="section">
           <div className="tips">
             <h3>Tips from Head Chefs</h3> 
-            <div><b>{this.state.comments.length} Comments</b></div>
-            <AddCommentForm addComment={this.addComment}/>
+            <div>{this.state.comments.length} Comments</div>
+            <AddCommentForm postComment={this.postComment}/>
             <CommentList comments={this.state.comments}/>
           </div>
         </section>

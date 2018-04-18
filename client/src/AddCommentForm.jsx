@@ -19,7 +19,7 @@ class AddCommentForm extends React.Component {
   submit(e) {
     e.preventDefault();
     const { comment } = this.state;
-    this.props.addComment({ comment });
+    this.props.postComment({ comment });
     this.setState({ comment: '' });
   }
 

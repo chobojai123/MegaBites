@@ -11,7 +11,7 @@ const commentSection = new mongoose.Schema({
       commentsText: String,
       fullName: String,
       created_At: String,
-      image: String,
+      userImage: String,
     }
   ],
 });
