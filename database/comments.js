@@ -16,10 +16,10 @@ const commentSection = new mongoose.Schema({
 
 const Comments = mongoose.model('recipe', commentSection);
 
-// getRecipe function
-const getRecipe = (recipeName) => {
+
+const getComment = (recipeID) => {
   return new Promise((resolve, reject) => {
-    Comments.find(null, null, {sort: {'created_At': -1}})
+    Comments.findOne({id: recipeID})
       .then((results) => { resolve(results) })
       .catch((err) => { reject(err) })
   });
@@ -27,4 +27,4 @@ const getRecipe = (recipeName) => {
 
 
 module.exports.Comments = Comments;
-module.exports.getRecipe = getRecipe;
+module.exports.getComment = getComment;
