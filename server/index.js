@@ -13,7 +13,7 @@ app.post('/recipe', (req, res) => {
 
 
 app.get('/recipe/:id', (req, res) => {
-  return Comments.getComments(req.params.id)
+  Comments.getComments(req.params.id)
     .then((recipes) => {
       res.status(200);
       res.send(recipes);

@@ -24,7 +24,7 @@ class App extends React.Component {
     .then(comment => this.setState({comments: comment.data[0].comments}))
     .catch(err => console.log(err))
   }
-
+  
 // add comment function is still in progress *stretch goal
   postComment(comment) {
     axios.post('/recipe/:id', comment)
