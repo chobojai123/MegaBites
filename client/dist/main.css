@@ -4,6 +4,8 @@ textarea {
   resize: none;
   padding-left: 8px;
   padding-right: 8px;
+  width: 508px;
+  height: 50px;
 }
 
 h3 {
@@ -19,6 +21,7 @@ form {
 }
 /* Header.jsx */
 
+
 .header {
   padding-left: 8px;
   padding-right: 8px;
@@ -31,13 +34,63 @@ form {
   color: black;
 }
 
-
 .sortBy {
-  font-weight: 600;
   font-size: 15px;
   float: right;
-  color: black;
+  color: #4b4f56;
+  margin-right: 5px;
 }
+
+.top {
+  font-size: 15px;
+  float: right;
+  color: #4b4f56;
+  max-width: 200px;
+  display: inline-flex;
+  background-color: #f6f7f9;
+  border-color: #ced0d4;
+  color: #4b4f56;
+  border: 1px solid;
+  border-radius: 2px;
+  box-sizing: content-box;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  justify-content: center;
+  padding: 0 8px;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  vertical-align: middle;
+  word-wrap: normal;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+/* .hi2 {
+    width: 6px;
+    height: 11px;
+    background-position: -26px -103px;
+    bottom: 1px;
+    position: relative;
+    vertical-align: middle;
+    background-image: url(/rsrc.php/v3/yQ/r/Fu8JFf1tsb6.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    display: inline-block;
+    font-style: italic;
+    color: #4b4f56;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+
+} */
+
 .clearLine {
   border-bottom: 1px solid #e9ebee;
   margin-bottom: 24px;
