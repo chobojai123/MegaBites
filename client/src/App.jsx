@@ -41,7 +41,7 @@ class App extends React.Component {
         <section className="section">
           <div className="tips">
             <h3>Tips from Head Chefs</h3> 
-            <div>{this.state.comments.length} Comments</div>
+            <div className="commentsLength">{this.state.comments.length} Comments</div>
             <AddCommentForm postComment={this.postComment}/>
             <CommentList comments={this.state.comments}/>
           </div>
