@@ -3,6 +3,7 @@ import axios from 'axios';
 import AddCommentForm from './AddCommentForm.jsx';
 import CommentList from './CommentList.jsx';
 import About from './About.jsx';
+import Header from './Header.jsx';
 
 
 class App extends React.Component {
@@ -34,18 +35,16 @@ class App extends React.Component {
       .catch(err => console.log(err) )
   }
 
-
   render() {
     return (
       <div className="app">
         <section className="section">
           <div className="tips">
-            <h3>Tips from Head Chefs</h3> 
-            <div className="commentsLength">{this.state.comments.length} Comments</div>
+            <Header comments={this.state.comments}/>
             <AddCommentForm postComment={this.postComment}/>
             <CommentList comments={this.state.comments}/>
           </div>
-          <About/>
+            <About/>
         </section>
       </div>
     );

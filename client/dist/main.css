@@ -1,3 +1,11 @@
+textarea {
+  background: center center no-repeat;
+  border: 1px solid #e6e6e6;; 
+  resize: none;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
 h3 {
   margin: 0 0 20px 0;
   font-size: 20px;
@@ -5,8 +13,37 @@ h3 {
   color: #0f346C;
 }
 
+form {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+/* Header.jsx */
+
+.header {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
 .commentsLength {
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 15px;
+  float: left;
+  color: black;
+}
+
+
+.sortBy {
+  font-weight: 600;
+  font-size: 15px;
+  float: right;
+  color: black;
+}
+.clearLine {
+  border-bottom: 1px solid #e9ebee;
+  margin-bottom: 24px;
+  line-height: 0px;
+  padding: 20px 0;
+  zoom: 1
 }
 
 .app {
@@ -18,15 +55,10 @@ h3 {
 .section {
   padding-top: 30px;
   margin-top: -10px;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 8px;
+  padding-right: 8px;
   border-bottom: 1px solid #e6e6e6;
   display: block;
-}
-
-.comments{
-  display: inline;
-  position: relative;
 }
 
 .tips {
@@ -37,6 +69,8 @@ h3 {
   margin-left: 1.3%;
   margin-right: 1.3%;
 }
+
+/* About.jsx */
 
 .about {
   float: left;
@@ -49,17 +83,24 @@ h3 {
 
 .about P {
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 16 px;
   font-family: "Chronicle Ssm";
   line-height: 1.7;
   color: #555;
 }
 
-.mb-20 {
+.aboutTexts {
   margin-bottom: 20px;
 }
 
-.img-flex {
+.aboutImg {
   max-width: 100%;
   color: #555;
+}
+
+/* Comment.jsx */
+
+.comments {
+  padding-left: 8px;
+  padding-right: 8px;
 }
