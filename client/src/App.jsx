@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import AddCommentForm from './AddCommentForm.jsx';
 import CommentList from './CommentList.jsx';
+import About from './About.jsx';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -39,10 +41,11 @@ class App extends React.Component {
         <section className="section">
           <div className="tips">
             <h3>Tips from Head Chefs</h3> 
-            <div>{this.state.comments.length} Comments</div>
+            <div className="commentsLength">{this.state.comments.length} Comments</div>
             <AddCommentForm postComment={this.postComment}/>
             <CommentList comments={this.state.comments}/>
           </div>
+          <About/>
         </section>
       </div>
     );
