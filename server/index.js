@@ -1,7 +1,5 @@
 const express = require('express');
 const bodyparser = require('body-parser');
-const Promise = require('bluebird');
-const request = require('request');
 const Comments = require('../database/comments.js');
 
 let app = express();
@@ -15,13 +13,13 @@ app.post('/recipe', (req, res) => {
 
 
 app.get('/recipe/:id', (req, res) => {
-  return Comments.getComment(req.params.id)
+  Comments.getComments(req.params.id)
     .then((recipes) => {
       res.status(200);
       res.send(recipes);
     })
     .catch((err) => {
-      res.status(400);
+      res.status(400)
       res.end('Failed to get comments', err);
     });
 });

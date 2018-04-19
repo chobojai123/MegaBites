@@ -1,46 +1,49 @@
 import React from 'react';
+import axios from 'axios';
 import AddCommentForm from './AddCommentForm.jsx';
 import CommentList from './CommentList.jsx';
-import axios from 'axios';
-
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      comment: [],
+      comments: [],
     };
-    this.getComment = this.getComment.bind(this);
-    this.addComment = this.addComment.bind(this);
+    this.getComments = this.getComments.bind(this);
+    this.postComment = this.postComment.bind(this);
   }
 
+  // testing with a recipe ID
   componentDidMount() {
-    this.getComment();
+    this.getComments(2);
   }
 
 
-  getComment() {
-    axios.get('/recipe')
-    .then(recipes => this.setState({ comment: recipes.data }))
-    .then(recipe => console.log(this.state.comment))
-    .catch(err => console.log('Error getting comments', err));
-    
+  getComments(id) {
+    axios.get(`/recipe/${id}`)
+    .then(comment => this.setState({comments: comment.data[0].comments}))
+    .catch(err => console.log(err))
   }
-
-
-  addComment(comment) {
-    axios.post('/recipe', comment)
-      .then(comment => this.setState({ comment: comment }))
-      .catch(err => console.log('Error adding comment', err) )
+  
+// add comment function is still in progress *stretch goal
+  postComment(comment) {
+    axios.post('/recipe/:id', comment)
+      .then(comment => this.getComments)
+      .catch(err => console.log(err) )
   }
 
 
   render() {
     return (
       <div className="app">
-        <h1>Tips from Head Chefs</h1> 
-        <CommentList comment={this.state.comment}/>
-        <AddCommentForm addComment={this.addComment}/>
+        <section className="section">
+          <div className="tips">
+            <h3>Tips from Head Chefs</h3> 
+            <div>{this.state.comments.length} Comments</div>
+            <AddCommentForm postComment={this.postComment}/>
+            <CommentList comments={this.state.comments}/>
+          </div>
+        </section>
       </div>
     );
   }
