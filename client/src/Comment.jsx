@@ -7,7 +7,7 @@ const Comment = (props) => (
       <img src={props.comment.userImage} alt='user'></img>
       <span>{props.comment.fullName}</span>
     </div>
-    <p>{props.comment.commentsText}</p>
+    <p className="commentsText">{props.comment.commentsText}</p>
   </div>
 )
 
