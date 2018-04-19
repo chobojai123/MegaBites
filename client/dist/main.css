@@ -1,0 +1,70 @@
+h3 {
+  margin: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f346C;
+}
+.section {
+  padding-top: 30px;
+  padding-bottom: 25px;
+  margin-top: 15px;
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: 1px solid #e6e6e6;
+  display: block;
+}
+
+.app {
+  margin-left: -1.28205%;
+  margin-right: -1.28205%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+.comments{
+  display: inline;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.tips {
+  float: left;
+  width: 47.4359%;
+  position: relative;
+  min-height: 1px;
+  margin-left: 1.28205%;
+  margin-right: 1.28205%;
+}
+
+.about {
+  float: left;
+  width: 47.4359%;
+  position: relative;
+  min-height: 1px;
+  margin-left: 1.28205%;
+  margin-right: 1.28205%;
+}
+
+.about P {
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-family: "Chronicle Ssm";
+  line-height: 1.7;
+  color: #555;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.img-flex {
+  max-width: 100%;
+  color: #555;
+}
