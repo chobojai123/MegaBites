@@ -8,7 +8,7 @@ app.use(express.static(__dirname + '/../client/dist'));
 
 app.post('/recipe', (req, res) => {
 
-  res.send('hi');
+  res.send('bye');
 })
 
 
