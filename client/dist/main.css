@@ -157,3 +157,30 @@ form {
   padding-left: 8px;
   padding-right: 8px;
 }
+
+#userImage {
+  height: 48px;
+  width: 48px;
+  border: 0;
+  display: block;
+  color: #365899;
+  cursor: pointer;
+  float: left;
+  margin-right: 8px;
+}
+
+.fullName {
+  font-size: 14px;
+  line-height: 1.358;
+  word-break: break-word;
+  word-wrap: break-word;
+  white-space: nowrap;
+  font-weight: 600;
+  color: #365899;
+  cursor: pointer;
+  
+}
+
+.commentsText {
+
+}

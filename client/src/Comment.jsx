@@ -4,10 +4,10 @@ const Comment = (props) => (
   
   <div className="comments">
     <div className="info">
-      <img src={props.comment.userImage} alt='user'></img>
-      <span>{props.comment.fullName}</span>
+      <img id='userImage' src={props.comment.userImage} alt='user'></img>
+      <span className="fullName">{props.comment.fullName}</span>
+      <p className="commentsText">{props.comment.commentsText}</p>
     </div>
-    <p className="commentsText">{props.comment.commentsText}</p>
   </div>
 )
 
