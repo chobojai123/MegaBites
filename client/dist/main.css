@@ -9,7 +9,7 @@ textarea {
 }
 
 h3 {
-  margin: 0 0 20px 0;
+  margin: 10px 0 20px 0;
   font-size: 20px;
   font-weight: 600;
   color: #0f346C;
@@ -19,9 +19,6 @@ form {
   padding-left: 8px;
   padding-right: 8px;
 }
-
-
-
 
 /* Header.jsx */
 
@@ -47,7 +44,8 @@ form {
 }
 
 .top {
-  font-size: 15px;
+  font-size: 12px;
+  line-height: 25px;
   float: right;
   max-width: 200px;
   display: inline-flex;
@@ -68,30 +66,11 @@ form {
   font-family: Helvetica, Arial, sans-serif
 }
 
-/* .hi2 {
-    width: 6px;
-    height: 11px;
-    background-position: -26px -103px;
-    bottom: 1px;
-    position: relative;
-    vertical-align: middle;
-    background-image: url(/rsrc.php/v3/yQ/r/Fu8JFf1tsb6.png);
-    background-size: auto;
-    background-repeat: no-repeat;
-    display: inline-block;
-    font-style: italic;
-    color: #4b4f56;
-    font-size: 12px;
-    -webkit-font-smoothing: antialiased;
-    font-weight: bold;
-
-} */
-
 .clearLine {
   border-bottom: 1px solid #e9ebee;
   margin-bottom: 24px;
   line-height: 0px;
-  padding: 20px 0;
+  padding: 18px 0;
   zoom: 1
 }
 
@@ -133,7 +112,7 @@ form {
 
 .about P {
   margin-bottom: 20px;
-  font-size: 16 px;
+  font-size: 15px;
   font-family: "Chronicle Ssm";
   line-height: 1.7;
   color: #555;
@@ -193,10 +172,11 @@ a {
   text-decoration: none
 }
 
-.period {
+.period, .likes {
   font-size: 12px;
   line-height: 1.358;
   vertical-align: center;
+  color: black;
 }
 
 .glyphicon {
@@ -208,4 +188,15 @@ a {
   margin-right: 4px;
   margin-bottom: 12px;
   position: relative;
+}
+
+.clickButton {
+  background: none;
+  border: none; 
+  padding: 0;
+  color: #4267b2;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.358;
+  text-decoration: none
 }

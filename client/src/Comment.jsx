@@ -9,13 +9,12 @@ const Comment = (props) => (
       <p className="commentsText">{props.comment.commentsText}</p>
     </div>
     <div>
-      <a href='#'>Like</a>
+      <button className="clickButton" onClick={() => {props.likeClicked()}}>{props.likeMsg}</button>
       <span className='period'> · </span>
       <a href='#'>Reply</a>
       <span className='period'> · </span>
-      <span>
-        <i class="glyphicon glyphicon-thumbs-up"></i>2
-      </span>
+      <span><i className="glyphicon glyphicon-thumbs-up"></i></span>
+      <span className='likes'>{props.likes}</span>
     </div>
   </div>
 )
