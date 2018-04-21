@@ -27,9 +27,9 @@ class App extends React.Component {
     let parsed = queryString.parse(location.search);
     let currentId = Number(parsed.id);
     if (currentId) {
-      this.getComments(Number(curentId));
+      this.getComments(Number(currentId));
     } else {
-      this.getComments(4);
+      this.getComments(1);
     }
   }
 

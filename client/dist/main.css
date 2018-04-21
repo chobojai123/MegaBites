@@ -4,8 +4,9 @@ textarea {
   resize: none;
   padding-left: 8px;
   padding-right: 8px;
-  width: 508px;
-  height: 50px;
+  width: 477px;
+  height: 55px;
+  margin-bottom: 24px;
 }
 
 h3 {
@@ -130,6 +131,12 @@ form {
 
 /* Comment.jsx */
 
+.info {
+  display: block; 
+  margin: 0;
+  padding: 0;
+}
+
 .comments {
   padding-left: 8px;
   padding-right: 8px;
@@ -153,15 +160,29 @@ form {
   color: #365899;
   cursor: pointer;
   font-family: Helvetica, Arial, sans-serif;
-
 }
 
 .commentsText {
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   margin-top: 4px;
   font-size: 14px;
   line-height: 1.358;
   font-family: Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+
+
+.clickButton {
+  margin-left: 57px;
+  background: none;
+  border: none; 
+  padding: 0;
+  color: #4267b2;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.358;
+  text-decoration: none
+  
 }
 
 a {
@@ -190,13 +211,15 @@ a {
   position: relative;
 }
 
-.clickButton {
-  background: none;
-  border: none; 
-  padding: 0;
-  color: #4267b2;
+/* AddCommentForm.jsx */
+
+#userPic {
+  height: 48px;
+  width: 48px;
+  border: 0;
+  display: block;
+  color: #365899;
   cursor: pointer;
-  font-size: 12px;
-  line-height: 1.358;
-  text-decoration: none
+  float: left;
+  margin-right: 8px;
 }
