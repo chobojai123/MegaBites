@@ -142,7 +142,7 @@ form {
   padding-right: 8px;
 }
 
-#userImage {
+.userImage {
   height: 48px;
   width: 48px;
   border: 0;
@@ -158,6 +158,14 @@ form {
   line-height: 1.358;
   font-weight: 600;
   color: #365899;
+  cursor: pointer;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.address {
+  font-size: 14px;
+  line-height: 1.358;
+  color: #90949c;
   cursor: pointer;
   font-family: Helvetica, Arial, sans-serif;
 }
@@ -209,6 +217,15 @@ a {
   margin-right: 4px;
   margin-bottom: 12px;
   position: relative;
+}
+
+.date {
+  font-size: 12px;
+  line-height: 1.358;
+  color: #90949c;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 /* AddCommentForm.jsx */

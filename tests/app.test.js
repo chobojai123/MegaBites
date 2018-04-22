@@ -12,4 +12,14 @@ describe('app rendered', () => {
   it('should mount only 1', function () {
     expect(mount(<App />).find('.app').length).toBe(1);
   });
+
+  const wrapper = shallow(<App />);
+  wrapper.state().likeStatus = false;
+
+  it('toggleClick in App.jsx toggles the boolean in state.likeStatus', () => {
+    expect(wrapper.state().likeStatus).toEqual(false);
+    wrapper.instance().toggleClick();
+    expect(wrapper.state('likeStatus')).toEqual(true);
+    wrapper.instance().toggleClick();
+  });
 })

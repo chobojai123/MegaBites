@@ -18,24 +18,32 @@ const sampleData = () => {
           fullName: faker.name.findName(),
           created_At: faker.date.past(),
           userImage: faker.image.avatar(),
+          city: faker.address.city(),
+          state: faker.address.state(),
         },
         {
           commentsText: faker.lorem.sentence(),
           fullName: faker.name.findName(),
           created_At: faker.date.past(),
           userImage: faker.image.avatar(),
+          city: faker.address.city(),
+          state: faker.address.state(),
         },
         {
           commentsText: faker.lorem.sentence(),
           fullName: faker.name.findName(),
           created_At: faker.date.past(),
           userImage: faker.image.avatar(),
+          city: faker.address.city(),
+          state: faker.address.state(),
         },
         {
           commentsText: faker.lorem.sentence(),
           fullName: faker.name.findName(),
           created_At: faker.date.past(),
           userImage: faker.image.avatar(),
+          city: faker.address.city(),
+          state: faker.address.state(),
         }],
       });
   }
