@@ -1,7 +1,7 @@
 import { shallow, mount, render } from 'enzyme';
 import React, { Component } from 'react';
 import renderer from 'react-test-renderer';
-import App from '../client/src/App.jsx';
+import App from '../client/src/components/App.jsx';
 
 describe('app rendered', () => {
 
@@ -16,10 +16,10 @@ describe('app rendered', () => {
   const wrapper = shallow(<App />);
   wrapper.state().likeStatus = false;
 
-  it('toggleClick in App.jsx toggles the boolean in state.likeStatus', () => {
+  it('handleClick in App.jsx toggles the boolean in state.likeStatus', () => {
     expect(wrapper.state().likeStatus).toEqual(false);
-    wrapper.instance().toggleClick();
+    wrapper.instance().handleClick();
     expect(wrapper.state('likeStatus')).toEqual(true);
-    wrapper.instance().toggleClick();
+    wrapper.instance().handleClick();
   });
 })
