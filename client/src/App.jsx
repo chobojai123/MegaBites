@@ -18,10 +18,10 @@ class App extends React.Component {
     };
     this.getComments = this.getComments.bind(this);
     this.postComment = this.postComment.bind(this);
-    this.incrementLike = this.incrementLike.bind(this);
+    this.toggleLike = this.toggleLike.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  // testing with a recipe ID
   componentDidMount() {
     let parsed = queryString.parse(location.search);
     let currentId = Number(parsed.id);
@@ -32,22 +32,21 @@ class App extends React.Component {
     }
   }
 
-  incrementLike() {
+  toggleLike() {
     for(var i = 0; i < this.state.comments.length; i ++){
       var comment = this.state.comments[0];
-      console.log(comment)
       if(this.state.likeStatus === false && this.state.likeMsg === 'Like') {
         this.setState({ likes: this.state.likes +1, likeMsg: 'Unlike'})
       } else {
         this.setState({ likes: this.state.likes -1, likeMsg: 'Like' })
       }
     }
+    console.log(this.state.likeStatus)
   }
 
-  toggleClick() {
+  handleClick() {
     this.setState({ likeStatus: !this.state.likeStatus})
   }
-
 
   getComments(id) {
     axios.get(`/recipe/${id}`)
@@ -68,7 +67,13 @@ class App extends React.Component {
           <div className="tips">
             <Header comments={this.state.comments}/>
             <AddCommentForm postComment={this.postComment}/>
-            <CommentList comments={this.state.comments} likes={this.state.likes} likeClicked={this.incrementLike} likeMsg={this.state.likeMsg}/>
+            <CommentList 
+              comments={this.state.comments} 
+              likes={this.state.likes} 
+              likeClicked={this.toggleLike} 
+              likeMsg={this.state.likeMsg}
+              handleClick={this.handleClick}
+            />
           </div>
             <About/>
         </section>

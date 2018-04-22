@@ -12,7 +12,7 @@ const Comment = (props) => (
       <p className="commentsText">{props.comment.commentsText}</p>
     </div>
     <div>
-      <button className="clickButton" onClick={() => {props.likeClicked()}}>{props.likeMsg}</button>
+      <button className="clickButton" onClick={() => {props.likeClicked(); {props.handleClick()}}}>{props.likeMsg}</button>
       <span className='period'> · </span>
       <a href='#'>Reply</a>
       <span className='period'> · </span>
