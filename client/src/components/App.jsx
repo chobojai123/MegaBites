@@ -12,14 +12,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       comments: [],
-      likes: 0,
-      likeMsg: 'Like',
-      likeStatus: false,
     };
     this.getComments = this.getComments.bind(this);
     this.postComment = this.postComment.bind(this);
-    this.toggleLike = this.toggleLike.bind(this);
-    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -32,22 +27,8 @@ class App extends React.Component {
     }
   }
 
-  toggleLike() {
-      if(!this.state.likeStatus) {
-        this.setState({ likes: this.state.likes +1, likeMsg: 'Unlike'})
-      } else {
-        this.setState({ likes: this.state.likes -1, likeMsg: 'Like' })
-      }
-  
-    console.log(this.state.likeStatus)
-  }
-
-  handleClick() {
-    this.setState({ likeStatus: !this.state.likeStatus})
-  }
-
   getComments(id) {
-    axios.get(`/recipe/${id}`)
+    axios.get(`http://127.0.0.1:5000/recipe/${id}`)
     .then(comment => this.setState({comments: comment.data[0].comments}))
     .catch(err => console.log(err))
   }
@@ -65,13 +46,7 @@ class App extends React.Component {
           <div className="tips">
             <Header comments={this.state.comments}/>
             <AddCommentForm postComment={this.postComment}/>
-            <CommentList 
-              comments={this.state.comments} 
-              likes={this.state.likes} 
-              likeClicked={this.toggleLike} 
-              likeMsg={this.state.likeMsg}
-              handleClick={this.handleClick}
-            />
+            <CommentList comments={this.state.comments}/>
           </div>
             <About/>
         </section>

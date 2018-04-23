@@ -1,8 +1,10 @@
 const express = require('express');
 const bodyparser = require('body-parser');
+const cors = require('cors');
 const Comments = require('../database/comments.js');
+const app = express();
 
-let app = express();
+app.use(cors());
 app.use(bodyparser.json());
 app.use(express.static(__dirname + '/../client/dist'));
 

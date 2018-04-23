@@ -5,7 +5,6 @@ class Comment extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      comments: [],
       likes: 0,
       likeMsg: 'Like',
       likeStatus: false,
