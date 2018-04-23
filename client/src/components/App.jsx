@@ -33,14 +33,12 @@ class App extends React.Component {
   }
 
   toggleLike() {
-    for(var i = 0; i < this.state.comments.length; i ++){
-      var comment = this.state.comments[0];
       if(!this.state.likeStatus) {
         this.setState({ likes: this.state.likes +1, likeMsg: 'Unlike'})
       } else {
         this.setState({ likes: this.state.likes -1, likeMsg: 'Like' })
       }
-    }
+  
     console.log(this.state.likeStatus)
   }
 

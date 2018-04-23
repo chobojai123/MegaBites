@@ -30,22 +30,20 @@ form {
 
 .commentsLength {
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
   float: left;
   color: black;
   font-family: Helvetica, Arial, sans-serif
 }
 
 .sortBy {
-  font-size: 15px;
+  font-size: 14px;
   float: right;
   color: #4b4f56;
-  margin-right: 5px;
   font-family: Helvetica, Arial, sans-serif
 }
 
 .split .dropdown{
-  font-size: 12px;
   height: 25px;
   float: right;
   max-width: 200px;
@@ -61,14 +59,22 @@ form {
 }
 
 .btn{
+  font-size: 12px;
   justify-content: center;
-   text-align: center;
-   padding: 1px 5px;
+  text-align: center;
+  padding: 1px 5px;
+  font-weight: 600;
+  color: #4b4f56;
 }
 
 #split-button-pull-right{
   padding-left: 0px;
   padding-right: 0px;
+}
+
+.dropdown-menu{
+  min-width: 20px;
+  font-size: 40px;
 }
 
 .clearLine {
