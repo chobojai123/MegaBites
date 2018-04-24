@@ -12,17 +12,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       comments: [],
-      likes: 0,
-      likeMsg: 'Like',
-      likeStatus: true,
     };
     this.getComments = this.getComments.bind(this);
     this.postComment = this.postComment.bind(this);
-    this.incrementLike = this.incrementLike.bind(this);
-    this.decreaseLike = this.decreaseLike.bind(this);
   }
 
-  // testing with a recipe ID
   componentDidMount() {
     let parsed = queryString.parse(location.search);
     let currentId = Number(parsed.id);
@@ -32,22 +26,9 @@ class App extends React.Component {
       this.getComments(1);
     }
   }
-
-  incrementLike() {
-    this.setState({ likes: this.state.likes +1, likeMsg: 'Unlike'})
-  }
-
-  decreaseLike() {
-    this.setState({ likes: this.state.likes -1 })
-  }
-
-  toggleClick() {
-    this.setState({ likeStatus: !this.state.likeStatus})
-  }
-
-
+  
   getComments(id) {
-    axios.get(`/recipe/${id}`)
+    axios.get(`http://127.0.0.1:5000/recipe/${id}/comments`)
     .then(comment => this.setState({comments: comment.data[0].comments}))
     .catch(err => console.log(err))
   }
@@ -65,7 +46,7 @@ class App extends React.Component {
           <div className="tips">
             <Header comments={this.state.comments}/>
             <AddCommentForm postComment={this.postComment}/>
-            <CommentList comments={this.state.comments} likes={this.state.likes} likeClicked={this.incrementLike} likeMsg={this.state.likeMsg}/>
+            <CommentList comments={this.state.comments}/>
           </div>
             <About/>
         </section>
