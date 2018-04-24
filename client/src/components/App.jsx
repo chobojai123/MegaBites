@@ -26,9 +26,9 @@ class App extends React.Component {
       this.getComments(1);
     }
   }
-
+  
   getComments(id) {
-    axios.get(`http://127.0.0.1:5000/recipe/${id}`)
+    axios.get(`http://127.0.0.1:5000/recipe/${id}/comments`)
     .then(comment => this.setState({comments: comment.data[0].comments}))
     .catch(err => console.log(err))
   }

@@ -23,6 +23,21 @@ form {
 
 /* Header.jsx */
 
+/* .hello {
+  width: 477px;
+  height: 55px;
+  box-sizing: border-box;
+  display: block;
+  margin-top: 0em;
+  margin-bottom: 24px;
+    margin-left: 100px;
+  padding-right: 8px;
+  float:right;
+    background: center center no-repeat;
+  border: 1px solid #e6e6e6;; 
+  resize: none;
+} */
+
 .header {
   padding-left: 8px;
   padding-right: 8px;

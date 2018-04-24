@@ -14,7 +14,7 @@ app.post('/recipe', (req, res) => {
 })
 
 
-app.get('/recipe/:id', (req, res) => {
+app.get('/recipe/:id/comments', (req, res) => {
   Comments.getComments(req.params.id)
     .then((recipes) => {
       res.status(200);
