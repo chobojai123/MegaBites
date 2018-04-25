@@ -7,7 +7,7 @@ const Header = (props) => (
       <div className="header">
         <span className="commentsLength">{props.comments.length} Comments</span>
         <span className="split">
-        <SplitButton className="split" title="Top" pullRight id="split-button-pull-right">
+        <SplitButton className="top" title="Top" pullRight id="split-button-pull-right">
           <MenuItem eventKey="1">Top</MenuItem>
           <MenuItem eventKey="2">Newest</MenuItem>
           <MenuItem eventKey="3">Oldest</MenuItem>
