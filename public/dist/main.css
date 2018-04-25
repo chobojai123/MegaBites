@@ -23,20 +23,44 @@ form {
 
 /* Header.jsx */
 
-/* .hello {
+.panel-body {
+  float: left;
+  display: block;
+  padding: 0 10px;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0px;
+}
+
+.checkbox {
+  float: left;
+  display: block;
+  padding: 7px;
+  justify-content: center;
+  text-align: center;
+}
+
+.post {
+  float: right;
+  justify-content: center;
+  text-align: center;
+}
+
+.hello {
   width: 477px;
   height: 55px;
   box-sizing: border-box;
   display: block;
   margin-top: 0em;
   margin-bottom: 24px;
-    margin-left: 100px;
+  margin-left: 100px;
   padding-right: 8px;
   float:right;
-    background: center center no-repeat;
+  background: center center no-repeat;
   border: 1px solid #e6e6e6;; 
   resize: none;
-} */
+  border-radius: 0px;
+}
 
 .header {
   padding-left: 8px;

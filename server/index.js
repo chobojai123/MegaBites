@@ -6,7 +6,8 @@ const app = express();
 
 app.use(cors());
 app.use(bodyparser.json());
-app.use(express.static(__dirname + '/../client/dist'));
+app.use('/recipes/:id', express.static(__dirname + '/../public/dist'));
+app.use('/', express.static(__dirname + '/../public/dist'))
 
 app.post('/recipe', (req, res) => {
 
@@ -14,11 +15,11 @@ app.post('/recipe', (req, res) => {
 })
 
 
-app.get('/recipe/:id/comments', (req, res) => {
+app.get('/recipes/:id/comments', (req, res) => {
   Comments.getComments(req.params.id)
     .then((recipes) => {
       res.status(200);
-      res.send(recipes);
+      res.send(JSON.stringify(recipes));
     })
     .catch((err) => {
       res.status(400)

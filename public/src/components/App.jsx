@@ -18,17 +18,16 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    let parsed = queryString.parse(location.search);
-    let currentId = Number(parsed.id);
-    if (currentId) {
-      this.getComments(Number(currentId));
+    const id = window.location.pathname.split('/')[2];
+    if (id) {
+      this.getComments(id);
     } else {
       this.getComments(1);
     }
   }
   
   getComments(id) {
-    axios.get(`http://127.0.0.1:5000/recipe/${id}/comments`)
+    axios.get(`http://127.0.0.1:5000/recipes/${id}/comments`)
     .then(comment => this.setState({comments: comment.data[0].comments}))
     .catch(err => console.log(err))
   }
