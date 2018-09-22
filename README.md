@@ -1,39 +1,7 @@
-# Project Name
+# MegaBites
 
-> Project description
-
-## Related Projects
-
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-
-## Table of Contents
-
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
-
-## Usage
-
-> Some usage instructions
-
-## Requirements
-
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
-
-## Development
-
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
-```
+Built review component for a meal-kit service app
+● Deployed proxy server to integrate four micro-services as a single entry-point to the app
+● Tested components using Jest and Enzyme, achieving 80% test coverage
+● Modularized component using React and Styled-Components to ensure code reusability
 
